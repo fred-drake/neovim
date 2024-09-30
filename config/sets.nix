@@ -82,7 +82,7 @@
     treesitter = {
       enable = true;
 
-      folding = true;
+      folding = false;
       settings.indent.enable = true;
     };
 

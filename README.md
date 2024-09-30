@@ -21,7 +21,7 @@ nix run github:fred-drake/neovim#.
 
 ## Things To Do
 
-TODO: Add supermaven autocompletion.
-TODO: Implement DAP for debugging
-TODO: Change fzf to only allow git-level root if applicable
-TODO: Break up LSP, CMP and Tree-Sitter for lanuages like rust, go, etc.
+- TODO: Add supermaven autocompletion.
+- TODO: Implement DAP for debugging
+- TODO: Change fzf to only allow git-level root if applicable
+- TODO: Break up LSP, CMP and Tree-Sitter for lanuages like rust, go, etc.

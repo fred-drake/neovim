@@ -176,7 +176,6 @@ in { pkgs, ... }: {
           nix = [ "nixfmt" ];
           python = [ "black" ];
           ruby = [ "rubyfmt" ];
-          rust = [ "rustfmt" ];
           terraform = [ "tofu_fmt" ];
           tf = [ "tofu_fmt" ];
           typescript = [ "prettier" ];
@@ -243,11 +242,5 @@ in { pkgs, ... }: {
         omnisharp.enable = true;
       };
     };
-
-    rustaceanvim = {
-      enable = true;
-      settings = { tools.enable_clippy = true; };
-    };
-    # rust-tools.enable = true;
   };
 }

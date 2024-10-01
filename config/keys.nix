@@ -34,6 +34,11 @@
           group = "SOPS";
           icon = "";
         }
+        {
+          __unkeyed-1 = "<leader>d";
+          group = "Debug";
+          icon = "";
+        }
       ];
     };
   };

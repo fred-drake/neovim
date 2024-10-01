@@ -16,8 +16,14 @@ nix run .#
 Option 2: Run directly
 
 ```bash
-nix run github:fred-drake/neovim#.
+nix run github:fred-drake/neovim#
 ```
+
+### Configurations
+
+The default configuration performs editing without settings for any particular language or technology. The following configurations allow for CMP, LSP, Tree-Sitter and DAP in their respective language or technology stack:
+
+- Rust `nix run github:fred-drake/neovim#rust`
 
 ## Things To Do
 

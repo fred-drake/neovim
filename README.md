@@ -1,4 +1,4 @@
-# My Personal Neovim Setup
+# ❄️ My Personal Neovim Setup ❄️
 
 My Nix-based Neovim configuration. For when you have an unhealthy obsession for declarativity and configurability.
 

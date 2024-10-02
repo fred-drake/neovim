@@ -34,12 +34,21 @@
             };
             extraSpecialArgs = { };
           };
+          csharpNixvimModule = {
+            inherit pkgs;
+            module = { pkgs, ... }: {
+              imports = [ ./config ./config/csharp ];
+              extraPackages = with pkgs; [ sops dotnet-sdk_8 csharpier ];
+            };
+            extraSpecialArgs = { };
+          };
           pkgs = import inputs.nixpkgs {
             inherit system overlays;
             config.allowUnfree = true;
           };
           baseNvim = nixvim'.makeNixvimWithModule baseNixvimModule;
           rustNvim = nixvim'.makeNixvimWithModule rustNixvimModule;
+          csharpNvim = nixvim'.makeNixvimWithModule csharpNixvimModule;
         in {
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
@@ -51,6 +60,8 @@
             default = baseNvim;
             # Lets you run `nix run .#rust` to start nixvim with Rust configuration
             rust = rustNvim;
+            # Lets you run `nix run .#csharp` to start nixvim with C# configuration
+            csharp = csharpNvim;
           };
         };
     };

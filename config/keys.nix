@@ -39,6 +39,11 @@
           group = "Debug";
           icon = "";
         }
+        {
+          __unkeyed-1 = "<leader>c";
+          group = "Code Actions";
+          icon = "";
+        }
       ];
     };
   };
@@ -287,6 +292,20 @@
       key = "<leader>bl";
       action = "<CMD>BufferLineCloseLeft<CR>";
       options = { desc = "Delete Buffers to the Left"; };
+    }
+
+    # Code Actions
+    {
+      mode = "n";
+      key = "H";
+      action = "<CMD>lua vim.diagnostic.open_float()<CR>";
+      options = { desc = "Popup Diagnostics"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>cd";
+      action = "<CMD>Trouble diagnostics toggle<CR>";
+      options = { desc = "List All Diagnostics"; };
     }
   ];
 }

@@ -38,7 +38,7 @@
             inherit pkgs;
             module = { pkgs, ... }: {
               imports = [ ./config ./config/csharp ];
-              extraPackages = with pkgs; [ sops dotnet-sdk_8 csharpier ];
+              extraPackages = with pkgs; [ sops ];
             };
             extraSpecialArgs = { };
           };

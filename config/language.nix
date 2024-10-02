@@ -138,7 +138,6 @@ in { pkgs, ... }: {
       enable = true;
       sources.formatting = {
         black.enable = true;
-        csharpier.enable = true;
         hclfmt.enable = true;
         just.enable = true;
         nixfmt.enable = true;
@@ -242,5 +241,11 @@ in { pkgs, ... }: {
         omnisharp.enable = true;
       };
     };
+
+    trouble = {
+      enable = true;
+      settings = { use_diagnostic_signs = true; };
+    };
+
   };
 }

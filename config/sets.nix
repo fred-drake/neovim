@@ -60,7 +60,32 @@
 
     neo-tree = {
       enable = true;
+      popupBorderStyle = "rounded";
       extraOptions = {
+        default_component_configs = {
+          diagnostics = {
+            symbols = {
+              hint = "";
+              info = "";
+              warn = "";
+              error = "";
+            };
+          };
+          git_status = {
+            symbols = {
+              added = "";
+              deleted = "󰗨";
+              modified = "";
+              renamed = "";
+              untracked = "";
+              ignored = "";
+              unstaged = " ";
+              staged = "";
+              unmerged = "";
+              conflict = "";
+            };
+          };
+        };
         filesystem = {
           follow_current_file.enabled = true;
           filtered_items = {

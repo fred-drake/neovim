@@ -125,6 +125,18 @@
         "<CMD>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>";
       options = { desc = "Goto T[y]pe Definition"; };
     }
+    {
+      mode = "n";
+      key = "D";
+      action = "<CMD>lua vim.diagnostic.open_float()<CR>";
+      options = { desc = "Popup Diagnostics"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>cd";
+      action = "<CMD>Trouble diagnostics toggle<CR>";
+      options = { desc = "List All Diagnostics"; };
+    }
 
     # SOPS
     {
@@ -292,20 +304,6 @@
       key = "<leader>bl";
       action = "<CMD>BufferLineCloseLeft<CR>";
       options = { desc = "Delete Buffers to the Left"; };
-    }
-
-    # Code Actions
-    {
-      mode = "n";
-      key = "H";
-      action = "<CMD>lua vim.diagnostic.open_float()<CR>";
-      options = { desc = "Popup Diagnostics"; };
-    }
-    {
-      mode = "n";
-      key = "<leader>cd";
-      action = "<CMD>Trouble diagnostics toggle<CR>";
-      options = { desc = "List All Diagnostics"; };
     }
   ];
 }

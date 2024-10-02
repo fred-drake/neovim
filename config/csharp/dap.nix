@@ -1,9 +1,12 @@
-{
-  plugins.dap = {
-    enable = true;
-    extensions = {
-      dap-ui.enable = true;
-      dap-virtual-text.enable = true;
-    };
-  };
+{ pkgs, ... }: {
+  extraConfigLua = ''
+    local dap = require('dap')
+
+    dap.adapters.coreclr = {
+      type = 'executable',
+      command = '${pkgs.netcoredbg}/bin/netcoredbg',
+      args = {'--interpreter=vscode'}
+    }
+
+  '';
 }

@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   plugins = {
     cmp-dap.enable = true;
     dap = {
@@ -12,15 +12,15 @@
       };
       signs = {
         dapBreakpoint = {
-          text = "●";
+          text = "";
           texthl = "DapBreakpoint";
         };
         dapBreakpointCondition = {
-          text = "●";
+          text = "";
           texthl = "DapBreakpointCondition";
         };
         dapLogPoint = {
-          text = "◆";
+          text = "";
           texthl = "DapLogPoint";
         };
       };
@@ -200,11 +200,21 @@
         desc = "Eval";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>df";
+      action =
+        "<CMD>lua require('dap.ext.vscode').load_launchjs()<CR><CMD>Telescope dap configurations<CR>";
+      options = { desc = "Debug Configurations"; };
+    }
   ];
 
+  # Allow DAP UI to automatically open and close when possible
   extraConfigLua = ''
     require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
     require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
     require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
   '';
+
+  extraPlugins = [ (pkgs.vimPlugins.telescope-dap-nvim) ];
 }

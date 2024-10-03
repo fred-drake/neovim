@@ -140,7 +140,10 @@ in { pkgs, ... }: {
         black.enable = true;
         hclfmt.enable = true;
         just.enable = true;
-        nixfmt.enable = true;
+        nixfmt = {
+          enable = true;
+          package = pkgs.nixfmt-rfc-style;
+        };
         opentofu_fmt.enable = true;
         prettier.enable = true;
         # rubyfmt is broken on darwin-based systems

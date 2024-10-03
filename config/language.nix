@@ -170,6 +170,7 @@ in { pkgs, ... }: {
           html = [ "prettier" ];
           javascript = [ "prettier" ];
           javascriptreact = [ "prettier" ];
+          json = [ "prettier" ];
           lua = [ "stylua" ];
           markdown = [ "prettier" ];
           nix = [ "nixfmt" ];
@@ -236,9 +237,12 @@ in { pkgs, ... }: {
         end
       '';
       servers = {
+        jsonls.enable = true;
+        marksman.enable = true;
         nil-ls.enable = true;
         nixd.enable = true;
         omnisharp.enable = true;
+        yamlls.enable = true;
       };
     };
 

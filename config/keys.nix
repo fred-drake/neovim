@@ -44,6 +44,11 @@
           group = "Code Actions";
           icon = "";
         }
+        {
+          __unkeyed-1 = "<leader>d/";
+          group = "Search";
+          icon = "";
+        }
       ];
     };
   };
@@ -304,6 +309,32 @@
       key = "<leader>bl";
       action = "<CMD>BufferLineCloseLeft<CR>";
       options = { desc = "Delete Buffers to the Left"; };
+    }
+
+    # DAP Telescope Actions
+    {
+      mode = "n";
+      key = "<leader>d/c";
+      action = "<CMD>Telescope dap commands<CR>";
+      options = { desc = "Search Commands"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>d/b";
+      action = "<CMD>Telescope dap list_breakpoints<CR>";
+      options = { desc = "Search Breakpoints"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>d/v";
+      action = "<CMD>Telescope dap variables<CR>";
+      options = { desc = "Search Variables"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>d/f";
+      action = "<CMD>Telescope dap frames<CR>";
+      options = { desc = "Search Frames"; };
     }
   ];
 }

@@ -1,5 +1,10 @@
 { pkgs, ... }: {
-  extraPlugins = [ pkgs.vimPlugins.supermaven-nvim ];
+  extraPlugins = with pkgs; [
+    vimPlugins.supermaven-nvim # AI code completion
+    vimPlugins.vim-dadbod # DB client
+    vimPlugins.vim-dadbod-completion # DB completion
+    vimPlugins.vim-dadbod-ui # DB UI
+  ];
 
   extraConfigLua = ''
     require("supermaven-nvim").setup({

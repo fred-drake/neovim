@@ -49,6 +49,11 @@
           group = "Search";
           icon = "";
         }
+        {
+          __unkeyed-1 = "<leader>D";
+          group = "Database";
+          icon = "";
+        }
       ];
     };
   };
@@ -99,6 +104,14 @@
       key = "<leader>e";
       action = "<CMD>Neotree toggle<CR>";
       options = { desc = "Toggle tree view"; };
+    }
+
+    # Database
+    {
+      mode = "n";
+      key = "<leader>Du";
+      action = "<CMD>DBUI<CR>";
+      options = { desc = "Show Database UI"; };
     }
 
     # LSP Actions

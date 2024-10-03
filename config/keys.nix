@@ -145,13 +145,13 @@
     }
     {
       mode = "n";
-      key = "D";
+      key = "<leader>cd";
       action = "<CMD>lua vim.diagnostic.open_float()<CR>";
       options = { desc = "Popup Diagnostics"; };
     }
     {
       mode = "n";
-      key = "<leader>cd";
+      key = "<leader>cD";
       action = "<CMD>Trouble diagnostics toggle<CR>";
       options = { desc = "List All Diagnostics"; };
     }

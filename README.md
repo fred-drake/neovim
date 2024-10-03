@@ -24,6 +24,7 @@ nix run github:fred-drake/neovim#
 The default configuration performs editing without settings for any particular language or technology. The following configurations allow for CMP, LSP, Tree-Sitter and DAP in their respective language or technology stack:
 
 - Rust `nix run github:fred-drake/neovim#rust`
+- C# `nix run github:fred-drake/neovim#csharp`
 
 ## Things To Do
 

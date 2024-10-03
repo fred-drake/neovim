@@ -25,9 +25,8 @@ The default configuration performs editing without settings for any particular l
 
 - Rust `nix run github:fred-drake/neovim#rust`
 - C# `nix run github:fred-drake/neovim#csharp`
+- Go `nix run github:fred-drake/neovim#golang`
 
 ## Things To Do
 
-- TODO: Implement DAP for debugging
 - TODO: Change fzf to only allow git-level root if applicable
-- TODO: Break up LSP, CMP and Tree-Sitter for lanuages like rust, go, etc.

@@ -42,6 +42,14 @@
             };
             extraSpecialArgs = { };
           };
+          goNixvimModule = {
+            inherit pkgs;
+            module = { pkgs, ... }: {
+              imports = [ ./config ./config/golang ];
+              extraPackages = with pkgs; [ sops ];
+            };
+            extraSpecialArgs = { };
+          };
           pkgs = import inputs.nixpkgs {
             inherit system overlays;
             config.allowUnfree = true;
@@ -49,6 +57,7 @@
           baseNvim = nixvim'.makeNixvimWithModule baseNixvimModule;
           rustNvim = nixvim'.makeNixvimWithModule rustNixvimModule;
           csharpNvim = nixvim'.makeNixvimWithModule csharpNixvimModule;
+          goNvim = nixvim'.makeNixvimWithModule goNixvimModule;
         in {
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
@@ -62,6 +71,8 @@
             rust = rustNvim;
             # Lets you run `nix run .#csharp` to start nixvim with C# configuration
             csharp = csharpNvim;
+            # Lets you run `nix run .#golang` to start nixvim with Go configuration
+            golang = goNvim;
           };
         };
     };

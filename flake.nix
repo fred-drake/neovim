@@ -50,6 +50,14 @@
             };
             extraSpecialArgs = { };
           };
+          pythonNixvimModule = {
+            inherit pkgs;
+            module = { pkgs, ... }: {
+              imports = [ ./config ./config/python ];
+              extraPackages = with pkgs; [ sops ];
+            };
+            extraSpecialArgs = { };
+          };
           pkgs = import inputs.nixpkgs {
             inherit system overlays;
             config.allowUnfree = true;
@@ -58,6 +66,7 @@
           rustNvim = nixvim'.makeNixvimWithModule rustNixvimModule;
           csharpNvim = nixvim'.makeNixvimWithModule csharpNixvimModule;
           goNvim = nixvim'.makeNixvimWithModule goNixvimModule;
+          pythonNvim = nixvim'.makeNixvimWithModule pythonNixvimModule;
         in {
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
@@ -73,6 +82,8 @@
             csharp = csharpNvim;
             # Lets you run `nix run .#golang` to start nixvim with Go configuration
             golang = goNvim;
+            # Lets you run `nix run .#python` to start nixvim with Python configuration
+            python = pythonNvim;
           };
         };
     };

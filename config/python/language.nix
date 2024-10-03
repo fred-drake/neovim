@@ -6,7 +6,6 @@
     };
     lsp.servers.pylsp = {
       enable = true;
-      # pythonPackage = "pkgs.python312Full";
       settings.plugins = {
         black.enabled = true;
         flake8.enabled = true;

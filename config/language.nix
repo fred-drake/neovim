@@ -209,8 +209,8 @@ in
             "gr" = "references";
             "gI" = "implementation";
             "gy" = "type_definition";
-            "<leader>rn" = "rename";
             "<leader>ca" = "code_action";
+            "<leader>cr" = "rename";
             "<leader>wl" = "list_workspace_folders";
             "<leader>wr" = "remove_workspace_folder";
             "<leader>wa" = "add_workspace_folder";

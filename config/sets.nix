@@ -6,14 +6,6 @@
         options = {
           always_show_bufferline = false;
           buffer_close_icon = "";
-          offsets = [
-            {
-              filetype = "neo-tree";
-              text = "Neo-tree";
-              highlight = "Directory";
-              text_align = "left";
-            }
-          ];
           diagnostics = "nvim_lsp";
         };
       };
@@ -60,49 +52,11 @@
       };
     };
 
-    neo-tree = {
-      enable = true;
-      popupBorderStyle = "rounded";
-      extraOptions = {
-        default_component_configs = {
-          diagnostics = {
-            symbols = {
-              hint = "";
-              info = "";
-              warn = "";
-              error = "";
-            };
-          };
-          git_status = {
-            symbols = {
-              added = "";
-              deleted = "󰗨";
-              modified = "";
-              renamed = "";
-              untracked = "";
-              ignored = "";
-              unstaged = " ";
-              staged = "";
-              unmerged = "";
-              conflict = "";
-            };
-          };
-        };
-        filesystem = {
-          follow_current_file.enabled = true;
-          filtered_items = {
-            hide_dotfiles = false;
-            hide_gitignored = false;
-            hide_hidden = false;
-          };
-        };
-      };
-    };
-
     noice.enable = true;
     notify.enable = true;
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
+    oil.enable = true;
     render-markdown.enable = true;
     todo-comments.enable = true;
 

@@ -4,8 +4,8 @@
   plugins.which-key = {
     enable = true;
     settings = {
-      # Settings groups
       spec = [
+        # Settings groups
         {
           __unkeyed-1 = "<leader>g";
           group = "Git";
@@ -55,6 +55,118 @@
           group = "Database";
           icon = "";
         }
+
+        # Keys with custom icons / labels
+        {
+          __unkeyed-1 = "<leader>e";
+          icon = "󰏇";
+          desc = "Oil";
+        }
+        {
+          __unkeyed-1 = "<leader>/";
+          icon = "";
+          desc = "Live Grep";
+        }
+        {
+          __unkeyed-1 = "<leader>da";
+          icon = "";
+          desc = "Run with Args";
+        }
+        {
+          __unkeyed-1 = "<leader>db";
+          icon = "";
+          desc = "Toggle Breakpoint";
+        }
+        {
+          __unkeyed-1 = "<leader>dB";
+          icon = "";
+          desc = "Breakpoint Condition";
+        }
+        {
+          __unkeyed-1 = "<leader>dc";
+          icon = "";
+          desc = "Continue";
+        }
+        {
+          __unkeyed-1 = "<leader>dC";
+          icon = "";
+          desc = "Run to cursor";
+        }
+        {
+          __unkeyed-1 = "<leader>de";
+          icon = "󰫧";
+          desc = "Eval";
+        }
+        {
+          __unkeyed-1 = "<leader>dg";
+          icon = "";
+          desc = "Go to line (no execute)";
+        }
+        {
+          __unkeyed-1 = "<leader>di";
+          icon = "󰆹";
+          desc = "Step into";
+        }
+        {
+          __unkeyed-1 = "<leader>dj";
+          icon = "";
+          desc = "Down";
+        }
+        {
+          __unkeyed-1 = "<leader>dk";
+          icon = "";
+          desc = "Up";
+        }
+        {
+          __unkeyed-1 = "<leader>dl";
+          icon = "";
+          desc = "Run Last";
+        }
+        {
+          __unkeyed-1 = "<leader>do";
+          icon = "";
+          desc = "Step Out";
+        }
+        {
+          __unkeyed-1 = "<leader>dO";
+          icon = "";
+          desc = "Step Over";
+        }
+        {
+          __unkeyed-1 = "<leader>dp";
+          icon = "";
+          desc = "Pause";
+        }
+        {
+          __unkeyed-1 = "<leader>dt";
+          icon = "";
+          desc = "Terminate";
+        }
+        {
+          __unkeyed-1 = "<leader>ca";
+          icon = "󱐋";
+          desc = "Code Actions";
+        }
+        {
+          __unkeyed-1 = "<leader>cr";
+          icon = "󰑕";
+          desc = "Rename";
+        }
+        {
+          __unkeyed-1 = "<leader>wa";
+          icon = "󱑾";
+          desc = "Add Workspace Folder";
+        }
+        {
+          __unkeyed-1 = "<leader>wr";
+          icon = "";
+          desc = "Remove Workspace Folder";
+        }
+        {
+          __unkeyed-1 = "<leader>wr";
+          icon = "󰉓";
+          desc = "List Workspace Folders";
+        }
       ];
     };
   };
@@ -80,6 +192,14 @@
       options.desc = "Normal mode and clear highlight";
     }
 
+    # Activate Oil
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<CMD>Oil<CR>";
+      options.desc = "Oil";
+    }
+
     # Add undo breakpoints
     {
       mode = "i";
@@ -98,13 +218,6 @@
       key = ";";
       action = ";<C-g>u";
       options.desc = "Undo breakpoint";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>e";
-      action = "<CMD>Neotree toggle<CR>";
-      options.desc = "Toggle tree view";
     }
 
     # FZF-Lua custom commands -- I want to limit to current directory

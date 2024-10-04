@@ -1,11 +1,16 @@
-let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
-in { pkgs, ... }: {
+let
+  selectOpts = "{behavior = cmp.SelectBehavior.Select}";
+in
+{ pkgs, ... }:
+{
   plugins = {
     cmp = {
       enable = true;
       settings = {
         autoEnableSources = true;
-        performance = { debounce = 150; };
+        performance = {
+          debounce = 150;
+        };
         sources = [
           { name = "path"; }
           {
@@ -19,10 +24,13 @@ in { pkgs, ... }: {
           { name = "supermaven"; }
         ];
 
-        snippet.expand =
-          "function(args) require('luasnip').lsp_expand(args.body) end";
+        snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         formatting = {
-          fields = [ "menu" "abbr" "kind" ];
+          fields = [
+            "menu"
+            "abbr"
+            "kind"
+          ];
           format = ''
             function(entry, item)
               local menu_icon = {
@@ -111,8 +119,7 @@ in { pkgs, ... }: {
         window = {
           completion = {
             border = "rounded";
-            winhighlight =
-              "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+            winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
             zindex = 1001;
             scrolloff = 0;
             colOffset = 0;
@@ -121,8 +128,7 @@ in { pkgs, ... }: {
           };
           documentation = {
             border = "rounded";
-            winhighlight =
-              "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+            winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
             zindex = 1001;
             maxHeight = 20;
           };
@@ -137,18 +143,16 @@ in { pkgs, ... }: {
     none-ls = {
       enable = true;
       sources.formatting = {
-        black.enable = true;
+        alejandra.enable = true;
         hclfmt.enable = true;
         just.enable = true;
-        nixfmt = {
-          enable = true;
-          package = pkgs.nixfmt-rfc-style;
-        };
         opentofu_fmt.enable = true;
         prettier.enable = true;
         # rubyfmt is broken on darwin-based systems
-        rubyfmt.enable = (pkgs.stdenv.hostPlatform.system != "x86_64-darwin"
-          && pkgs.stdenv.hostPlatform.system != "aarch64-darwin");
+        rubyfmt.enable = (
+          pkgs.stdenv.hostPlatform.system != "x86_64-darwin"
+          && pkgs.stdenv.hostPlatform.system != "aarch64-darwin"
+        );
         sqlformat.enable = true;
         stylua.enable = true;
         yamlfmt.enable = true;
@@ -174,10 +178,10 @@ in { pkgs, ... }: {
           javascript = [ "prettier" ];
           javascriptreact = [ "prettier" ];
           json = [ "prettier" ];
+          just = [ "just" ];
           lua = [ "stylua" ];
           markdown = [ "prettier" ];
-          nix = [ "nixfmt" ];
-          python = [ "black" ];
+          nix = [ "alejandra" ];
           ruby = [ "rubyfmt" ];
           terraform = [ "tofu_fmt" ];
           tf = [ "tofu_fmt" ];
@@ -244,14 +248,15 @@ in { pkgs, ... }: {
         marksman.enable = true;
         nil-ls.enable = true;
         nixd.enable = true;
-        omnisharp.enable = true;
         yamlls.enable = true;
       };
     };
 
     trouble = {
       enable = true;
-      settings = { use_diagnostic_signs = true; };
+      settings = {
+        use_diagnostic_signs = true;
+      };
     };
 
   };

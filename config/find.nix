@@ -5,51 +5,43 @@
       keymaps = {
         "<leader>/" = {
           action = "live_grep";
-          options = {desc = "Live Grep";};
+          options.desc = "Live Grep";
         };
         "<leader>," = {
           action = "buffers";
-          options = {desc = "Switch Buffer";};
+          options.desc = "Switch Buffer";
           settings = {
             sort_mru = true;
             sort_lastused = true;
           };
         };
-        "<leader>ff" = {
-          action = "files";
-          options = {desc = "Find Files";};
-        };
-        "<leader>fr" = {
-          action = "oldfiles";
-          options = {desc = "Recent Files";};
-        };
         "<leader>gc" = {
           action = "git_commits";
-          options = {desc = "Git Commits";};
+          options.desc = "Git Commits";
         };
         "<leader>gs" = {
           action = "git_status";
-          options = {desc = "Git Status";};
+          options.desc = "Git Status";
         };
         "<leader>s\"" = {
           action = "registers";
-          options = {desc = "Registers";};
+          options.desc = "Registers";
         };
         "<leader>sd" = {
           action = "diagnostics_document";
-          options = {desc = "Document Diagnostics";};
+          options.desc = "Document Diagnostics";
         };
         "<leader>sD" = {
           action = "diagnostics_workspace";
-          options = {desc = "Workspace Diagnostics";};
+          options.desc = "Workspace Diagnostics";
         };
         "<leader>sh" = {
           action = "help_tags";
-          options = {desc = "Help Pages";};
+          options.desc = "Help Pages";
         };
         "<leader>sk" = {
           action = "keymaps";
-          options = {desc = "Key Maps";};
+          options.desc = "Key Maps";
         };
       };
     };

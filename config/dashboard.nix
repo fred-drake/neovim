@@ -70,13 +70,12 @@
             {
               type = "button";
               val = "      Find File    ";
-              on_press.__raw = "function() require('telescope.builtin').find_files() end";
               opts = {
                 shortcut = "f";
                 keymap = [
                   "n"
                   "f"
-                  "<cmd>lua require('telescope.builtin').find_files()<CR>"
+                  "<cmd>lua require('fzf-lua').files({ cwd = vim.loop.cwd() })<CR>"
                   {
                     noremap = true;
                     silent = true;
@@ -102,7 +101,7 @@
                 keymap = [
                   "n"
                   "r"
-                  "<cmd>lua require('telescope.builtin').oldfiles()<CR>"
+                  "<cmd>lua require('fzf-lua').oldfiles({ cwd = vim.loop.cwd() })<CR>"
                   {
                     noremap = true;
                     silent = true;
@@ -128,7 +127,7 @@
                 keymap = [
                   "n"
                   "g"
-                  "<cmd>lua require('telescope.builtin').live_grep()<CR>"
+                  "<cmd>lua require('fzf-lua').live_grep()<CR>"
                   {
                     noremap = true;
                     silent = true;

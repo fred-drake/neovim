@@ -50,7 +50,3 @@ The default configuration performs editing without settings for any particular l
 | Go         | golines      | gopls                              | delve      | golang            |
 | Python     | black, isort | flake8, jedi, pylint, rope, mccabe | dap-python | python            |
 | Rust       | rustfmt      | clippy                             | lldb       | rust              |
-
-## Things To Do
-
-- TODO: Change fzf to only allow git-level root if applicable

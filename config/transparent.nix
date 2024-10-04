@@ -1,5 +1,5 @@
 let
-  status = [ "Alternate" "Current" "Inactive" "Visible" ];
+  status = ["Alternate" "Current" "Inactive" "Visible"];
   part = [
     "ADDED"
     "CHANGED"
@@ -26,7 +26,8 @@ let
     "FloatBorder"
   ];
   # "Buffer" + status + part
-  buffer_status = builtins.foldl' (acc: elem: acc ++ elem) [ ]
+  buffer_status =
+    builtins.foldl' (acc: elem: acc ++ elem) []
     (builtins.map (status: builtins.map (part: "Buffer" + status + part) part)
       status);
 in {

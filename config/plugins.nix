@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   extraPlugins = with pkgs; [
     vimPlugins.supermaven-nvim # AI code completion
     vimPlugins.vim-dadbod # DB client

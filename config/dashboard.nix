@@ -70,8 +70,7 @@
             {
               type = "button";
               val = "      Find File    ";
-              on_press.__raw =
-                "function() require('telescope.builtin').find_files() end";
+              on_press.__raw = "function() require('telescope.builtin').find_files() end";
               opts = {
                 shortcut = "f";
                 keymap = [
@@ -97,8 +96,7 @@
             {
               type = "button";
               val = "      Recent Files    ";
-              on_press.__raw =
-                "function() require('telescope.builtin').oldfiles() end";
+              on_press.__raw = "function() require('telescope.builtin').oldfiles() end";
               opts = {
                 shortcut = "r";
                 keymap = [
@@ -124,8 +122,7 @@
             {
               type = "button";
               val = "      Find Text    ";
-              on_press.__raw =
-                "function() require('telescope.builtin').live_grep() end";
+              on_press.__raw = "function() require('telescope.builtin').live_grep() end";
               opts = {
                 shortcut = "g";
                 keymap = [

@@ -7,8 +7,7 @@ let
 
   # Create a list of import statements
   imports = map (name: ./. + "/${name}") nixFiles;
-in
-{
+in {
   # Import all configuration modules automatically
   imports = imports;
 }

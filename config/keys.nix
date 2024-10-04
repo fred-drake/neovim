@@ -64,19 +64,19 @@
       mode = "i";
       key = "jk";
       action = "<CMD>noh<CR><ESC>";
-      options = { desc = "Normal mode and clear highlight"; };
+      options = {desc = "Normal mode and clear highlight";};
     }
     {
       mode = "i";
       key = "<ESC>";
       action = "<CMD>noh<CR><ESC>";
-      options = { desc = "Normal mode and clear highlight"; };
+      options = {desc = "Normal mode and clear highlight";};
     }
     {
       mode = "n";
       key = "<ESC>";
       action = "<CMD>noh<CR><ESC>";
-      options = { desc = "Normal mode and clear highlight"; };
+      options = {desc = "Normal mode and clear highlight";};
     }
 
     # Add undo breakpoints
@@ -84,26 +84,26 @@
       mode = "i";
       key = ",";
       action = ",<C-g>u";
-      options = { desc = "Undo breakpoint"; };
+      options = {desc = "Undo breakpoint";};
     }
     {
       mode = "i";
       key = ".";
       action = ".<C-g>u";
-      options = { desc = "Undo breakpoint"; };
+      options = {desc = "Undo breakpoint";};
     }
     {
       mode = "i";
       key = ";";
       action = ";<C-g>u";
-      options = { desc = "Undo breakpoint"; };
+      options = {desc = "Undo breakpoint";};
     }
 
     {
       mode = "n";
       key = "<leader>e";
       action = "<CMD>Neotree toggle<CR>";
-      options = { desc = "Toggle tree view"; };
+      options = {desc = "Toggle tree view";};
     }
 
     # Database
@@ -111,49 +111,45 @@
       mode = "n";
       key = "<leader>Du";
       action = "<CMD>DBUI<CR>";
-      options = { desc = "Show Database UI"; };
+      options = {desc = "Show Database UI";};
     }
 
     # LSP Actions
     {
       mode = "n";
       key = "gd";
-      action =
-        "<CMD>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<CR>";
-      options = { desc = "Goto Definition"; };
+      action = "<CMD>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<CR>";
+      options = {desc = "Goto Definition";};
     }
     {
       mode = "n";
       key = "gr";
-      action =
-        "<CMD>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<CR>";
-      options = { desc = "References"; };
+      action = "<CMD>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<CR>";
+      options = {desc = "References";};
     }
     {
       mode = "n";
       key = "gI";
-      action =
-        "<CMD>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<CR>";
-      options = { desc = "Goto Implementation"; };
+      action = "<CMD>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<CR>";
+      options = {desc = "Goto Implementation";};
     }
     {
       mode = "n";
       key = "gy";
-      action =
-        "<CMD>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>";
-      options = { desc = "Goto T[y]pe Definition"; };
+      action = "<CMD>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>";
+      options = {desc = "Goto T[y]pe Definition";};
     }
     {
       mode = "n";
       key = "<leader>cd";
       action = "<CMD>lua vim.diagnostic.open_float()<CR>";
-      options = { desc = "Popup Diagnostics"; };
+      options = {desc = "Popup Diagnostics";};
     }
     {
       mode = "n";
       key = "<leader>cD";
       action = "<CMD>Trouble diagnostics toggle<CR>";
-      options = { desc = "List All Diagnostics"; };
+      options = {desc = "List All Diagnostics";};
     }
 
     # SOPS
@@ -161,13 +157,13 @@
       mode = "n";
       key = "<leader>od";
       action = "<CMD>!sops -d -i %<CR><CR>";
-      options = { desc = "Decrypt SOPS File"; };
+      options = {desc = "Decrypt SOPS File";};
     }
     {
       mode = "n";
       key = "<leader>oe";
       action = "<CMD>!sops -e -i %<CR><CR>";
-      options = { desc = "Encrypt SOPS File"; };
+      options = {desc = "Encrypt SOPS File";};
     }
 
     # Git
@@ -175,53 +171,53 @@
       mode = "n";
       key = "<leader>gg";
       action = "<CMD>LazyGit<CR>";
-      options = { desc = "LazyGit"; };
+      options = {desc = "LazyGit";};
     }
 
     # Windows
     {
       key = "<C-h>";
       action = "<CMD>wincmd h<CR>";
-      options = { desc = "Navigate Window Left"; };
+      options = {desc = "Navigate Window Left";};
     }
     {
       key = "<C-j>";
       action = "<CMD>wincmd j<CR>";
-      options = { desc = "Navigate Window Down"; };
+      options = {desc = "Navigate Window Down";};
     }
     {
       key = "<C-k>";
       action = "<CMD>wincmd k<CR>";
-      options = { desc = "Navigate Window Up"; };
+      options = {desc = "Navigate Window Up";};
     }
     {
       key = "<C-l>";
       action = "<CMD>wincmd l<CR>";
-      options = { desc = "Navigate Window Right"; };
+      options = {desc = "Navigate Window Right";};
     }
     {
       mode = "n";
       key = "<leader>w";
       action = "<c-w>";
-      options = { desc = "Windows"; };
+      options = {desc = "Windows";};
     }
     {
       mode = "n";
       key = "<leader>-";
       action = "<C-W>s";
-      options = { desc = "Split Window Below"; };
+      options = {desc = "Split Window Below";};
     }
     {
       mode = "n";
       key = "<leader>|";
       action = "<C-W>v";
-      options = { desc = "Split Window Right"; };
+      options = {desc = "Split Window Right";};
     }
     {
       mode = "n";
       key = "<leader>wd";
       action = "<C-W>c";
-      options = { desc = "Delete Window"; };
+      options = {desc = "Delete Window";};
     }
 
     # Tabs
@@ -229,43 +225,43 @@
       mode = "n";
       key = "<leader><tab>l";
       action = "<CMD>tablast<CR>";
-      options = { desc = "Last Tab"; };
+      options = {desc = "Last Tab";};
     }
     {
       mode = "n";
       key = "<leader><tab>o";
       action = "<CMD>tabonly<CR>";
-      options = { desc = "Close Other Tabs"; };
+      options = {desc = "Close Other Tabs";};
     }
     {
       mode = "n";
       key = "<leader><tab>f";
       action = "<CMD>tabfirst<CR>";
-      options = { desc = "First Tab"; };
+      options = {desc = "First Tab";};
     }
     {
       mode = "n";
       key = "<leader><tab><tab>";
       action = "<CMD>tabnew<CR>";
-      options = { desc = "New Tab"; };
+      options = {desc = "New Tab";};
     }
     {
       mode = "n";
       key = "<leader><tab>]";
       action = "<CMD>tabnext<CR>";
-      options = { desc = "Next Tab"; };
+      options = {desc = "Next Tab";};
     }
     {
       mode = "n";
       key = "<leader><tab>d";
       action = "<CMD>tabclose<CR>";
-      options = { desc = "Close Tab"; };
+      options = {desc = "Close Tab";};
     }
     {
       mode = "n";
       key = "<leader><tab>[";
       action = "<CMD>tabprevious<CR>";
-      options = { desc = "Previous Tab"; };
+      options = {desc = "Previous Tab";};
     }
 
     # Buffer
@@ -273,55 +269,55 @@
       mode = "n";
       key = "<S-h>";
       action = "<CMD>bprevious<CR>";
-      options = { desc = "Previous Buffer"; };
+      options = {desc = "Previous Buffer";};
     }
     {
       mode = "n";
       key = "<S-l>";
       action = "<CMD>bnext<CR>";
-      options = { desc = "Next Buffer"; };
+      options = {desc = "Next Buffer";};
     }
     {
       mode = "n";
       key = "<leader>bb";
       action = "<CMD>e #<CR>";
-      options = { desc = "Switch To Other Buffer"; };
+      options = {desc = "Switch To Other Buffer";};
     }
     {
       mode = "n";
       key = "<leader>bd";
       action = "<CMD>bd<CR>";
-      options = { desc = "Delete Buffer and Window"; };
+      options = {desc = "Delete Buffer and Window";};
     }
     {
       mode = "n";
       key = "<leader>bp";
       action = "<CMD>BufferLineTogglePin<CR>";
-      options = { desc = "Toggle Pin"; };
+      options = {desc = "Toggle Pin";};
     }
     {
       mode = "n";
       key = "<leader>bP";
       action = "<CMD>BufferLineGroupClose ungrouped<CR>";
-      options = { desc = "Delete Non-Pinned Buffers"; };
+      options = {desc = "Delete Non-Pinned Buffers";};
     }
     {
       mode = "n";
       key = "<leader>bo";
       action = "<CMD>BufferLineCloseOthers<CR>";
-      options = { desc = "Delete Other Buffers"; };
+      options = {desc = "Delete Other Buffers";};
     }
     {
       mode = "n";
       key = "<leader>br";
       action = "<CMD>BufferLineCloseRight<CR>";
-      options = { desc = "Delete Buffers to the Right"; };
+      options = {desc = "Delete Buffers to the Right";};
     }
     {
       mode = "n";
       key = "<leader>bl";
       action = "<CMD>BufferLineCloseLeft<CR>";
-      options = { desc = "Delete Buffers to the Left"; };
+      options = {desc = "Delete Buffers to the Left";};
     }
 
     # DAP Telescope Actions
@@ -329,25 +325,25 @@
       mode = "n";
       key = "<leader>d/c";
       action = "<CMD>Telescope dap commands<CR>";
-      options = { desc = "Search Commands"; };
+      options = {desc = "Search Commands";};
     }
     {
       mode = "n";
       key = "<leader>d/b";
       action = "<CMD>Telescope dap list_breakpoints<CR>";
-      options = { desc = "Search Breakpoints"; };
+      options = {desc = "Search Breakpoints";};
     }
     {
       mode = "n";
       key = "<leader>d/v";
       action = "<CMD>Telescope dap variables<CR>";
-      options = { desc = "Search Variables"; };
+      options = {desc = "Search Variables";};
     }
     {
       mode = "n";
       key = "<leader>d/f";
       action = "<CMD>Telescope dap frames<CR>";
-      options = { desc = "Search Frames"; };
+      options = {desc = "Search Frames";};
     }
   ];
 }

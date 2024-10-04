@@ -6,12 +6,14 @@
         options = {
           always_show_bufferline = false;
           buffer_close_icon = "";
-          offsets = [{
-            filetype = "neo-tree";
-            text = "Neo-tree";
-            highlight = "Directory";
-            text_align = "left";
-          }];
+          offsets = [
+            {
+              filetype = "neo-tree";
+              text = "Neo-tree";
+              highlight = "Directory";
+              text_align = "left";
+            }
+          ];
           diagnostics = "nvim_lsp";
         };
       };
@@ -27,14 +29,14 @@
         };
         signcolumn = true;
         signs = {
-          add = { text = "│"; };
-          change = { text = "│"; };
-          changedelete = { text = "~"; };
-          delete = { text = "_"; };
-          topdelete = { text = "‾"; };
-          untracked = { text = "┆"; };
+          add = {text = "│";};
+          change = {text = "│";};
+          changedelete = {text = "~";};
+          delete = {text = "_";};
+          topdelete = {text = "‾";};
+          untracked = {text = "┆";};
         };
-        watch_gitdir = { follow_files = true; };
+        watch_gitdir = {follow_files = true;};
       };
     };
 
@@ -50,10 +52,10 @@
     mini = {
       enable = true;
       modules = {
-        surround = { };
+        surround = {};
         indentscope = {
           symbol = "│";
-          options = { try_as_border = true; };
+          options = {try_as_border = true;};
         };
       };
     };

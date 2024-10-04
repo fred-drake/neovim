@@ -6,56 +6,89 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
-  outputs = { nixvim, flake-parts, rust-overlay, ... }@inputs:
+  outputs =
+    {
+      nixvim,
+      flake-parts,
+      rust-overlay,
+      ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems =
-        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      perSystem = { system, ... }:
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      perSystem =
+        { system, ... }:
         let
           overlays = [ (import rust-overlay) ];
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           baseNixvimModule = {
             inherit pkgs;
-            module = { pkgs, ... }: {
-              imports = [ ./config ];
-              extraPackages = with pkgs; [ sops ];
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [ ./config ];
+                extraPackages = with pkgs; [ sops ];
+              };
             extraSpecialArgs = { };
           };
           rustNixvimModule = {
             inherit pkgs;
-            module = { pkgs, ... }: {
-              imports = [ ./config ./config/rust ];
-              extraPackages = with pkgs; [
-                sops
-                rust-bin.stable.latest.default
-              ];
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./config
+                  ./config/rust
+                ];
+                extraPackages = with pkgs; [
+                  sops
+                  rust-bin.stable.latest.default
+                ];
+              };
             extraSpecialArgs = { };
           };
           csharpNixvimModule = {
             inherit pkgs;
-            module = { pkgs, ... }: {
-              imports = [ ./config ./config/csharp ];
-              extraPackages = with pkgs; [ sops ];
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./config
+                  ./config/csharp
+                ];
+                extraPackages = with pkgs; [ sops ];
+              };
             extraSpecialArgs = { };
           };
           goNixvimModule = {
             inherit pkgs;
-            module = { pkgs, ... }: {
-              imports = [ ./config ./config/golang ];
-              extraPackages = with pkgs; [ sops ];
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./config
+                  ./config/golang
+                ];
+                extraPackages = with pkgs; [ sops ];
+              };
             extraSpecialArgs = { };
           };
           pythonNixvimModule = {
             inherit pkgs;
-            module = { pkgs, ... }: {
-              imports = [ ./config ./config/python ];
-              extraPackages = with pkgs; [ sops ];
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./config
+                  ./config/python
+                ];
+                extraPackages = with pkgs; [ sops ];
+              };
             extraSpecialArgs = { };
           };
           pkgs = import inputs.nixpkgs {
@@ -67,11 +100,11 @@
           csharpNvim = nixvim'.makeNixvimWithModule csharpNixvimModule;
           goNvim = nixvim'.makeNixvimWithModule goNixvimModule;
           pythonNvim = nixvim'.makeNixvimWithModule pythonNixvimModule;
-        in {
+        in
+        {
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
-            default =
-              nixvimLib.check.mkTestDerivationFromNixvimModule baseNixvimModule;
+            default = nixvimLib.check.mkTestDerivationFromNixvimModule baseNixvimModule;
           };
           packages = {
             # Lets you run `nix run .` to start nixvim

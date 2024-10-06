@@ -167,6 +167,11 @@
           icon = "󰉓";
           desc = "List Workspace Folders";
         }
+        {
+          __unkeyed-1 = "<leader>h";
+          icon = "󱡅";
+          desc = "Harpoon";
+        }
       ];
     };
   };
@@ -226,6 +231,38 @@
       key = ";";
       action = ";<C-g>u";
       options.desc = "Undo breakpoint";
+    }
+
+    # Harpoon commands
+    {
+      mode = "n";
+      key = "<leader>ha";
+      action = "<CMD>lua require('harpoon.mark').add_file()<CR>";
+      options.desc = "Add File";
+    }
+    {
+      mode = "n";
+      key = "<leader>hn";
+      action = "<CMD>lua require('harpoon.ui').nav_next()<CR>";
+      options.desc = "Next File";
+    }
+    {
+      mode = "n";
+      key = "<leader>hp";
+      action = "<CMD>lua require('harpoon.ui').nav_prev()<CR>";
+      options.desc = "Previous File";
+    }
+    {
+      mode = "n";
+      key = "<leader>hm";
+      action = "<CMD>Telescope harpoon marks<CR>";
+      options.desc = "Telescope Menu";
+    }
+    {
+      mode = "n";
+      key = "<leader>hq";
+      action = "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>";
+      options.desc = "Quick Menu";
     }
 
     # FZF-Lua custom commands -- I want to limit to current directory

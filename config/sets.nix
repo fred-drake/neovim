@@ -1,7 +1,9 @@
 {
   plugins = {
+    auto-save.enable = true;
     bufferline = {
-      enable = true;
+      # TODO: remove this once you are used to not having it
+      enable = false;
       settings = {
         options = {
           always_show_bufferline = false;
@@ -30,6 +32,14 @@
         };
         watch_gitdir = {follow_files = true;};
       };
+    };
+
+    harpoon = {
+      enable = true;
+      saveOnToggle = true;
+      saveOnChange = true;
+      enterOnSendcmd = false;
+      markBranch = true;
     };
 
     hop.enable = true;

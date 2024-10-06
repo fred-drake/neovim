@@ -175,8 +175,6 @@ in
           formatters_by_ft = {
             css = ["prettier"];
             html = ["prettier"];
-            javascript = ["prettier"];
-            javascriptreact = ["prettier"];
             json = ["prettier"];
             just = ["just"];
             lua = ["stylua"];
@@ -185,8 +183,6 @@ in
             ruby = ["rubyfmt"];
             terraform = ["tofu_fmt"];
             tf = ["tofu_fmt"];
-            typescript = ["prettier"];
-            typescriptreact = ["prettier"];
             yaml = ["yamlfmt"];
           };
         };

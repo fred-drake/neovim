@@ -56,7 +56,20 @@
     notify.enable = true;
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
-    oil.enable = true;
+    oil = {
+      enable = true;
+      settings = {
+        columns = [
+          "icons"
+          "permissions"
+          "size"
+          "mtime"
+        ];
+        default_file_explorer = true;
+        delete_to_trash = true;
+        skip_confirmation_for_simple_edits = true;
+      };
+    };
     render-markdown.enable = true;
     todo-comments.enable = true;
 

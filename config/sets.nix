@@ -32,6 +32,7 @@
       };
     };
 
+    hop.enable = true;
     illuminate.enable = true;
     lazygit.enable = true;
     nvim-lightbulb.enable = true;

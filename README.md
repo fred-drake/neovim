@@ -29,6 +29,31 @@ The default configuration performs editing without settings for any particular l
 - Python `nix run github:fred-drake/neovim#python`
 - Javascript `nix run github:fred-drake/neovim#javascript`
 
+### Install Multiple Configurations
+
+You can have multiple neovim configurations (`nvim`, `nvim-rust`, `nvim-golang`, etc). Take a look at my [system configuration flake](https://github.com/fred-drake/nix/blob/main/flake.nix) to see how I do this, but here's the gist:
+
+Create a function that creates neovim links with unique configuration names:
+
+```nix
+    mkNeovimPackages = pkgs: neovimPkgs: let
+      mkNeovimAlias = name: pkg:
+        pkgs.runCommand "neovim-${name}" {} ''
+          mkdir -p $out/bin
+          ln -s ${pkg}/bin/nvim $out/bin/nvim-${name}
+        '';
+```
+
+And add it to your home-manager imports:
+
+```nix
+    ({pkgs, ...}: {
+      home.packages =
+        (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
+        ++ [inputs.neovim.packages.${pkgs.system}.default];
+    })
+```
+
 ## Technology Support
 
 | Technology | Formatter    | Language Server                    | Debugger        | Nix Configuration |

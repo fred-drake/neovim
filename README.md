@@ -28,6 +28,7 @@ The default configuration performs editing without settings for any particular l
 - Go `nix run github:fred-drake/neovim#golang`
 - Python `nix run github:fred-drake/neovim#python`
 - Javascript `nix run github:fred-drake/neovim#javascript`
+- Infrastructure as Code `nix run github:fred-drake/neovim#ia
 
 ### Install Multiple Configurations
 
@@ -65,8 +66,8 @@ And add it to your home-manager imports:
 | YAML       | yamlfmt      | yamllint, yamlls                   |                 | default           |
 | CSS        | prettier     |                                    |                 | default           |
 | HTML       | prettier     |                                    |                 | default           |
-| Javascript | prettier     |                                    |                 | default           |
-| Typescript | prettier     |                                    |                 | default           |
+| Javascript | prettier     |                                    |                 | javascript        |
+| Typescript | prettier     |                                    |                 | javascript        |
 | JSON       | prettier     | jsonls                             |                 | default           |
 | Markdown   | prettier     | marksman                           |                 | default           |
 | Ruby       | rubyfmt      |                                    |                 | default           |
@@ -77,3 +78,8 @@ And add it to your home-manager imports:
 | Python     | black, isort | flake8, jedi, pylint, rope, mccabe | dap-python      | python            |
 | Rust       | rustfmt      | clippy                             | lldb            | rust              |
 | Node       | prettier     | tsserver                           | vscode-js-debug | javascript        |
+| Ansible    | yamlfmt      | ansiblels                          |                 | iac               |
+| Terraform  | tofu_fmt     | terraformls                        |                 | iac               |
+| Nginx      |              | nginx-language-server              |                 | iac               |
+| Helm       |              | helm-ls                            |                 | iac               |
+| Dockerfile |              | dockerls                           |                 | iac               |

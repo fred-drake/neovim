@@ -89,6 +89,17 @@
           };
           extraSpecialArgs = {};
         };
+        iacNixvimModule = {
+          inherit pkgs;
+          module = {pkgs, ...}: {
+            imports = [
+              ./config
+              ./config/iac
+            ];
+            extraPackages = with pkgs; [sops ansible-lint];
+          };
+          extraSpecialArgs = {};
+        };
         pkgs = import inputs.nixpkgs {
           inherit system overlays;
           config.allowUnfree = true;
@@ -99,6 +110,7 @@
         goNvim = nixvim'.makeNixvimWithModule goNixvimModule;
         pythonNvim = nixvim'.makeNixvimWithModule pythonNixvimModule;
         javascriptNvim = nixvim'.makeNixvimWithModule javascriptNixvimModule;
+        iacNvim = nixvim'.makeNixvimWithModule iacNixvimModule;
       in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
@@ -117,6 +129,8 @@
           python = pythonNvim;
           # Lets you run `nix run .#javascript` to start nixvim with JS/TS configuration
           javascript = javascriptNvim;
+          # Lets you run `nix run .#javascript` to start nixvim with IaC configuration
+          iac = iacNvim;
         };
       };
     };

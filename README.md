@@ -37,22 +37,22 @@ You can have multiple neovim configurations (`nvim`, `nvim-rust`, `nvim-golang`,
 Create a function that creates neovim links with unique configuration names:
 
 ```nix
-    mkNeovimPackages = pkgs: neovimPkgs: let
-      mkNeovimAlias = name: pkg:
-        pkgs.runCommand "neovim-${name}" {} ''
-          mkdir -p $out/bin
-          ln -s ${pkg}/bin/nvim $out/bin/nvim-${name}
-        '';
+mkNeovimPackages = pkgs: neovimPkgs: let
+    mkNeovimAlias = name: pkg:
+    pkgs.runCommand "neovim-${name}" {} ''
+        mkdir -p $out/bin
+        ln -s ${pkg}/bin/nvim $out/bin/nvim-${name}
+    '';
 ```
 
 And add it to your home-manager imports:
 
 ```nix
-    ({pkgs, ...}: {
-      home.packages =
-        (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
-        ++ [inputs.neovim.packages.${pkgs.system}.default];
-    })
+({pkgs, ...}: {
+    home.packages =
+    (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
+    ++ [inputs.neovim.packages.${pkgs.system}.default];
+})
 ```
 
 ## Technology Support

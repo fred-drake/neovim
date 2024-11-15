@@ -28,7 +28,7 @@ The default configuration performs editing without settings for any particular l
 - Go `nix run github:fred-drake/neovim#golang`
 - Python `nix run github:fred-drake/neovim#python`
 - Javascript `nix run github:fred-drake/neovim#javascript`
-- Infrastructure as Code `nix run github:fred-drake/neovim#ia
+- Infrastructure as Code `nix run github:fred-drake/neovim#iac`
 
 ### Install Multiple Configurations
 

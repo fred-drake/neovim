@@ -59,7 +59,7 @@ And add it to your home-manager imports:
 
 | Technology | Formatter    | Language Server                    | Debugger        | Nix Configuration |
 | ---------- | ------------ | ---------------------------------- | --------------- | ----------------- |
-| Nix        | alejandra    | nil-ls, nixd                       |                 | default           |
+| Nix        | alejandra    | nil_ls, nixd                       |                 | default           |
 | Just       | just         |                                    |                 | default           |
 | SQL        | sqlformat    |                                    |                 | default           |
 | Lua        | stylua       |                                    |                 | default           |

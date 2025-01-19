@@ -63,6 +63,7 @@
       };
     };
 
+    neo-tree.enable = true;
     noice.enable = true;
     notify.enable = true;
     nvim-autopairs.enable = true;

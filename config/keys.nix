@@ -58,9 +58,14 @@
 
         # Keys with custom icons / labels
         {
-          __unkeyed-1 = "<leader>e";
+          __unkeyed-1 = "<leader>E";
           icon = "󰏇";
           desc = "Oil";
+        }
+        {
+          __unkeyed-1 = "<leader>e";
+          icon = "󰙅";
+          desc = "NeoTree";
         }
         {
           __unkeyed-1 = "<leader>/";
@@ -197,10 +202,18 @@
       options.desc = "Normal mode and clear highlight";
     }
 
-    # Activate Oil
+    # Activate NeoTree
     {
       mode = "n";
       key = "<leader>e";
+      action = "<CMD>Neotree toggle<CR>";
+      options.desc = "NeoTree";
+    }
+
+    # Activate Oil
+    {
+      mode = "n";
+      key = "<leader>E";
       action = "<CMD>Oil<CR>";
       options.desc = "Oil";
     }

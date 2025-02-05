@@ -3,6 +3,7 @@ let
 in
   {pkgs, ...}: {
     plugins = {
+      avante.enable = true;
       cmp = {
         enable = true;
         settings = {

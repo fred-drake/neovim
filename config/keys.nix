@@ -177,6 +177,11 @@
           icon = "󱡅";
           desc = "Harpoon";
         }
+        {
+          __unkeyed-1 = "<leader>n";
+          icon = "";
+          desc = "Bacon (Rust)";
+        }
       ];
     };
   };
@@ -530,6 +535,20 @@
       key = "<leader>d/f";
       action = "<CMD>Telescope dap frames<CR>";
       options.desc = "Search Frames";
+    }
+
+    # Bacon (Rust)
+    {
+      mode = "n";
+      key = "<leader>nl";
+      action = "<CMD>BaconList<CR>";
+      options.desc = "List Bacon Issues";
+    }
+    {
+      mode = "n";
+      key = "<leader>nn";
+      action = "<CMD>BaconLoad<CR>:w<CR>:BaconNext<CR>";
+      options.desc = "Next Bacon Issue";
     }
   ];
 }

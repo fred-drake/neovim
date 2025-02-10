@@ -80,6 +80,6 @@ And add it to your home-manager imports:
 | Node       | prettier     | tsserver                           | vscode-js-debug | javascript        |
 | Ansible    | yamlfmt      | ansiblels                          |                 | iac               |
 | Terraform  | tofu_fmt     | terraformls                        |                 | iac               |
-| Nginx      |              | nginx-language-server              |                 | iac               |
-| Helm       |              | helm-ls                            |                 | iac               |
+| Nginx      |              | nginx_language_server              |                 | iac               |
+| Helm       |              | helm_ls                            |                 | iac               |
 | Dockerfile |              | dockerls                           |                 | iac               |

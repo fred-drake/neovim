@@ -12,8 +12,8 @@
     lsp.servers = {
       ansiblels.enable = true;
       dockerls.enable = true;
-      helm-ls.enable = true;
-      nginx-language-server.enable = true;
+      helm_ls.enable = true;
+      nginx_language_server.enable = true;
       terraformls.enable = true;
     };
   };

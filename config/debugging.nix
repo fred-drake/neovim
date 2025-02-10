@@ -1,11 +1,9 @@
 {pkgs, ...}: {
+  plugins.dap-ui.settings.floating.mappings = {close = ["<ESC>" "q"];};
+  plugins.dap-ui.enable = true;
+  plugins.dap-virtual-text.enable = true;
   plugins = {
     cmp-dap.enable = true;
-    dap-virtual-text = {enable = true;};
-    dap-ui = {
-      enable = true;
-      settings.floating.mappings = {close = ["<ESC>" "q"];};
-    };
     dap = {
       enable = true;
       extensions = {

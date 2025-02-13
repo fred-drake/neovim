@@ -1,5 +1,9 @@
 let
-  selectOpts = "{behavior = cmp.SelectBehavior.Select}";
+  selectOpts = ''
+    {
+      behavior = cmp.SelectBehavior.Insert
+    }
+  '';
 in
   {pkgs, ...}: {
     plugins = {
@@ -22,28 +26,17 @@ in
               keywordLength = 3;
             }
             {name = "supermaven";}
+            {name = "luasnip";}
           ];
 
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
           formatting = {
             fields = [
-              "menu"
               "abbr"
               "kind"
+              "menu"
             ];
-            format = ''
-              function(entry, item)
-                local menu_icon = {
-                  nvim_lsp = '[LSP]',
-                  luasnip = '[SNIP]',
-                  buffer = '[BUF]',
-                  path = '[PATH]',
-                }
-
-                item.menu = menu_icon[entry.source.name]
-                return item
-              end
-            '';
+            # format = lspkindFormat;
           };
 
           mapping = {
@@ -136,6 +129,9 @@ in
         };
       };
       cmp-nvim-lsp.enable = true;
+      lspkind.enable = true;
+      lspkind.cmp.enable = true;
+      luasnip.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-treesitter.enable = true;
@@ -148,12 +144,7 @@ in
           just.enable = true;
           opentofu_fmt.enable = true;
           prettier.enable = true;
-          # rubyfmt is broken on darwin-based systems
-          rubyfmt.enable = (
-            pkgs.stdenv.hostPlatform.system
-            != "x86_64-darwin"
-            && pkgs.stdenv.hostPlatform.system != "aarch64-darwin"
-          );
+          rubocop.enable = true;
           sqlformat.enable = true;
           stylua.enable = true;
           yamlfmt.enable = true;
@@ -181,7 +172,7 @@ in
             lua = ["stylua"];
             markdown = ["prettier"];
             nix = ["alejandra"];
-            ruby = ["rubyfmt"];
+            ruby = ["rubocop"];
             terraform = ["tofu_fmt"];
             tf = ["tofu_fmt"];
             yaml = ["yamlfmt"];

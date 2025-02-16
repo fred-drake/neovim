@@ -31,9 +31,14 @@
           group = "Buffer";
         }
         {
-          __unkeyed-1 = "<leader>o";
+          __unkeyed-1 = "<leader>S";
           group = "SOPS";
           icon = "";
+        }
+        {
+          __unkeyed-1 = "<leader>O";
+          group = "Obsidian";
+          icon = "󰎚";
         }
         {
           __unkeyed-1 = "<leader>d";
@@ -283,6 +288,14 @@
       options.desc = "Quick Menu";
     }
 
+    # Outline
+    {
+      mode = "n";
+      key = "<leader>o";
+      action = "<CMD>Outline<CR>";
+      options.desc = "Outline";
+    }
+
     # FZF-Lua custom commands -- I want to limit to current directory
     {
       mode = "n";
@@ -346,15 +359,65 @@
     # SOPS
     {
       mode = "n";
-      key = "<leader>od";
+      key = "<leader>Sd";
       action = "<CMD>!sops -d -i %<CR><CR>";
       options.desc = "Decrypt SOPS File";
     }
     {
       mode = "n";
-      key = "<leader>oe";
+      key = "<leader>Se";
       action = "<CMD>!sops -e -i %<CR><CR>";
       options.desc = "Encrypt SOPS File";
+    }
+
+    # Obsidian
+    {
+      mode = "n";
+      key = "<leader>On";
+      action = "<CMD>ObsidianNew<CR>";
+      options.desc = "New Note";
+    }
+    {
+      mode = "n";
+      key = "<leader>Oo";
+      action = "<CMD>ObsidianQuickSwitch<CR>";
+      options.desc = "Open Note";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ol";
+      action = "<CMD>ObsidianBacklinks<CR>";
+      options.desc = "Backlinks";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ot";
+      action = "<CMD>ObsidianTags<CR>";
+      options.desc = "Tags";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ow";
+      action = "<CMD>ObsidianWorkspace<CR>";
+      options.desc = "Change workspace";
+    }
+    {
+      mode = "n";
+      key = "<leader>Op";
+      action = "<CMD>ObsidianPasteImg<CR>";
+      options.desc = "Paste image";
+    }
+    {
+      mode = "n";
+      key = "<leader>Oc";
+      action = "<CMD>ObsidianToggleCheckbox<CR>";
+      options.desc = "Toggle checkbox";
+    }
+    {
+      mode = "n";
+      key = "<leader>Of";
+      action = "<CMD>ObsidianSearch<CR>";
+      options.desc = "Find notes";
     }
 
     # Git

@@ -63,6 +63,64 @@
       };
     };
 
+    obsidian.enable = true;
+    obsidian.settings = {
+      attachments.img_folder = "Attachments";
+      completion = {
+        min_chars = 2;
+        nvim_cmp = true;
+      };
+      daily_notes = {
+        folder = "notes/dailies";
+        date_format = "%Y-%m-%d";
+        alias_format = "%B %-d, %Y";
+        template = "templates/daily.md";
+      };
+      new_notes_location = "current_dir";
+      note_id_func = ''
+        function(title)
+          local date = os.date("%Y-%m-%d %H%M")
+          local suffix = ""
+          if title ~= nil then
+            suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+          else
+            for _ = 1, 4 do
+              suffix = suffix .. string.char(math.random(65, 90))
+            end
+          end
+          return date .. "-" .. suffix
+        end
+      '';
+      workspaces = [
+        {
+          name = "personal";
+          path = "~/Source/gitea-app.internal.freddrake.com/fdrake/PKM-Personal";
+        }
+      ];
+      wiki_link_func = "use_alias_only";
+      disable_frontmatter = true;
+      templates = {
+        folder = "Templates";
+        date_format = "%Y-%m-%d";
+        time_format = "%H:%M";
+        substitutions = {};
+      };
+      follow_url_func = ''
+        function(url)
+              -- Open the URL in the default web browser.
+              vim.fn.jobstart({"open", url})  -- Mac OS
+              -- vim.fn.jobstart({"xdg-open", url})  -- linux
+              -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+              -- vim.ui.open(url) -- need Neovim 0.10.0+
+            end'';
+      follow_img_func = ''
+        function(img)
+              vim.fn.jobstart { "qlmanage", "-p", img }  -- Mac OS quick look preview
+              -- vim.fn.jobstart({"xdg-open", url})  -- linux
+              -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+            end'';
+    };
+
     neo-tree.enable = true;
     noice.enable = true;
     notify.enable = true;

@@ -170,7 +170,6 @@ in
             json = ["prettier"];
             just = ["just"];
             lua = ["stylua"];
-            markdown = ["prettier"];
             nix = ["alejandra"];
             ruby = ["rubocop"];
             terraform = ["tofu_fmt"];

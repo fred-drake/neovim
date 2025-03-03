@@ -64,7 +64,7 @@
       };
     };
 
-    obsidian.enable = true;
+    obsidian.enable = false;
     obsidian.settings = {
       attachments.img_folder = "Attachments";
       completion = {

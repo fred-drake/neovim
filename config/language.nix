@@ -25,7 +25,6 @@ in
               name = "buffer";
               keywordLength = 3;
             }
-            {name = "supermaven";}
             {name = "luasnip";}
           ];
 
